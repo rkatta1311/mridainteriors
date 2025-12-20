@@ -154,6 +154,7 @@ a{color:inherit;}
   z-index:1;
   max-width:640px;
   padding-top:7rem;
+  color: #FFFFFF; /* Force white text for hero content */
 }
 .hero .eyebrow{
   letter-spacing:.2em;
@@ -169,7 +170,7 @@ a{color:inherit;}
   margin-bottom:.75rem;
 }
 .hero-text{
-  color:var(--muted);
+  color: rgba(255, 255, 255, 0.85); /* Light text for readability on dark bg */
   font-size:.98rem;
   margin-bottom:1.4rem;
 }
@@ -194,7 +195,7 @@ a{color:inherit;}
 }
 .btn-ghost{
   border:1px solid rgba(247,247,251,0.7);
-  color:var(--text);
+  color: #FFFFFF; /* UPDATED: White text for visibility on dark hero */
   background:transparent;
 }
 .hero-dots{
@@ -485,10 +486,11 @@ main{
   letter-spacing:.16em;
   text-transform:uppercase;
   margin-bottom:.75rem;
+  color: #FFFFFF; /* UPDATED: White headings for visibility */
 }
 .footer-inner a{
   font-size:.86rem;
-  color:var(--muted);
+  color: #9ca3af; /* UPDATED: Lighter gray for better contrast */
   text-decoration:none;
   display:block;
   margin-bottom:.35rem;
@@ -499,7 +501,12 @@ main{
   text-align:center;
   padding:1rem 1.25rem 1.4rem;
   font-size:.8rem;
-  color:var(--muted);
+  color: #9ca3af; /* UPDATED: Lighter gray */
+}
+
+/* Specific override for small text in footer */
+.site-footer .small {
+  color: #9ca3af;
 }
 
 /* WhatsApp FAB */
@@ -697,12 +704,4 @@ main{
 @media(max-width:640px){
   .footer-inner{grid-template-columns:1fr;}
   .hero-content{padding-top:5.6rem;}
-
-  /* Ensure hero text is readable */
-  .hero .hero-content{
-    color:#f7f7fb;
-  }
-  .hero .hero-text{
-    color:#d1d5db;
-  }
 }
