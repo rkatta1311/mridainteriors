@@ -101,9 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     const updateSlidePosition = () => {
-      // Check if mobile (1 item) or desktop (2 items)
-      const isMobile = window.innerWidth <= 768;
-      const itemsPerView = isMobile ? 1 : 2;
       const gap = 20; // Must match CSS gap
 
       if (slides.length === 0) return;
@@ -116,13 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update button states
       prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex >= slides.length - itemsPerView;
+      // UPDATED: Allow scrolling until the very last item is the first one on the left
+      nextBtn.disabled = currentIndex >= slides.length - 1;
     };
 
     nextBtn.addEventListener('click', () => {
-      const isMobile = window.innerWidth <= 768;
-      const itemsPerView = isMobile ? 1 : 2;
-      if (currentIndex < slides.length - itemsPerView) {
+      // UPDATED: Condition matches the disabled logic above
+      if (currentIndex < slides.length - 1) {
         currentIndex++;
         updateSlidePosition();
       }

@@ -1,103 +1,233 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Satvam Club – Mrida Interiors</title>
-  <link rel="stylesheet" href="../styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Satvam Club – Mrida Interiors</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Fix for dark menu items on light background */
+        /* Only apply dark color when header is NOT scrolled */
+        .site-header:not(.scrolled) .main-nav a {
+          color: #1A1A1A;
+          text-shadow: none;
+        }
+        .site-header .main-nav a:hover {
+          color: #d9a967;
+        }
+
+        /* Fix video height to fit screen */
+        .project-media video {
+          max-height: 80vh; /* Limit height to 80% of the screen height */
+          object-fit: cover; /* Crop the video slightly to fill the width/height without stretching */
+          width: 100%;
+        }
+    </style>
 </head>
 <body>
 <header class="site-header">
-  <div class="nav-bar">
-    <a href="../index.html" class="brand">
-      <img src="../assets/logo-mrida-gold.png" alt="Mrida Interiors logo">
-    </a>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../services.html">Services</a>
-      <a href="../portfolio.html">Portfolio</a>
-      <a href="../contact.html" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+    <div class="nav-bar">
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo-mrida-gold.png" alt="Mrida Interiors logo">
+        </a>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="../services.html">Services</a>
+            <a href="../portfolio.html">Portfolio</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </div>
 </header>
 <main>
-  <section class="project-intro">
-    <div class="project-media">
-      <video controls poster="../assets/project2.jpg">
-        <source src="../assets/hero1.jpg" type="video/mp4">
-      </video>
-      <img src="../assets/project3.jpg" alt="Satvam Club detail" class="project-overlap">
-    </div>
-    <div class="project-summary">
-      <h1>Satvam Club</h1>
-      <p class="tagline">
-        A carefully layered interior with balanced lighting, tactile materials and a calm, welcoming mood.
-      </p>
-      <div class="project-meta">
-        <div><span>Location</span><strong>Sanand</strong></div>
-        <div><span>Type</span><strong>Club / Residential</strong></div>
-        <div><span>Area</span><strong>Approx. 2,500 sq.ft.</strong></div>
-      </div>
-      <p class="small">
-        Mrida Interiors managed planning, material selection, custom furniture and styling for this project,
-        ensuring every corner feels intentional and comfortable for daily use.
-      </p>
-      <a href="../contact.html" class="btn-primary" style="margin-top:1rem;display:inline-flex;">Discuss a Similar Project</a>
-    </div>
-  </section>
+    <section class="project-intro">
+        <div class="project-media">
+            <video autoplay muted loop playsinline
+                   poster="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0001.webp">
+                <source src="../assets/satvam-club/eklingji-satvam-club.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0002.webp"
+                 alt="Satvam Club detail" class="project-overlap">
+        </div>
+        <div class="project-summary">
+            <h1>Satvam Club</h1>
+            <p class="tagline">
+                A carefully layered interior with balanced lighting, tactile materials and a calm, welcoming mood.
+            </p>
+            <div class="project-meta">
+                <div><span>Location</span><strong>South Bopal</strong></div>
+                <div><span>Type</span><strong>Club / Residential</strong></div>
+                <div><span>Area</span><strong>Approx. 2,500 sq.ft.</strong></div>
+            </div>
+            <p class="small">
+                Mrida Interiors managed planning, material selection, custom furniture and styling for this project,
+                ensuring every corner feels intentional and comfortable for daily use.
+            </p>
+            <a href="../contact.html" class="btn-primary" style="margin-top:1rem;display:inline-flex;">Discuss a Similar
+                Project</a>
+        </div>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Gallery</h2>
-    </div>
-    <div class="gallery">
-      <img src="../assets/project2.jpg" data-lightbox data-src="../assets/project2.jpg" alt="Satvam Club view 1">
-      <img src="../assets/project3.jpg" data-lightbox data-src="../assets/project3.jpg" alt="Satvam Club view 2">
-      <img src="../assets/project4.jpg" data-lightbox data-src="../assets/project4.jpg" alt="Satvam Club view 3">
-      <img src="../assets/project5.jpg" data-lightbox data-src="../assets/project5.jpg" alt="Satvam Club view 4">
-      
-    </div>
-  </section>
+    <section class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+
+            <!-- NEW SLIDER STRUCTURE -->
+            <div class="gallery-slider-container">
+                <button class="slider-arrow prev" aria-label="Previous slide">‹</button>
+
+                <div class="gallery-slider-track">
+                    <!-- Slide 1 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0002.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0002.webp"
+                             alt="Satvam Club view 1">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0003.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0003.webp"
+                             alt="Satvam Club view 2">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0004.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0004.webp"
+                             alt="Satvam Club view 3">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0005.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0005.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0006.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0006.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0007.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0007.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0008.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0008.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0009.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0009.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 10 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0010.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0010.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 11 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0011.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0011.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 12 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0012.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0012.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                    <!-- Slide 13 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0013.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0013.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+                    <!-- Slide 14 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0014.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0014.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+                    <!-- Slide 15 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0015.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0015.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+                    <!-- Slide 16 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0016.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0016.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+                    <!-- Slide 17 -->
+                    <div class="gallery-slide">
+                        <img src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0018.webp"
+                             data-lightbox
+                             data-src="../assets/satvam-club/EKLINGJI%20SATVAM%20CLUB%20HOUSE%20PHOTOS_page-0018.webp"
+                             alt="Satvam Club view 4">
+                    </div>
+
+                </div>
+
+                <button class="slider-arrow next" aria-label="Next slide">›</button>
+            </div>
+            <!-- END SLIDER STRUCTURE -->
+
+        </div>
+    </section>
 </main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <img src="../assets/logo-mrida-gold.png" alt="Mrida Interiors" class="footer-logo">
-      <p class="small">
-        Boutique interior design studio crafting warm, modern spaces across Sanand.
-      </p>
-    </div>
-    <div>
-      <h4>Studio</h4>
-      <a href="../index.html">Home</a>
-      <a href="../services.html">Services</a>
-      <a href="../portfolio.html">Portfolio</a>
-      <a href="../contact.html">Contact</a>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <p class="small">
-        Sanand, Gujarat<br>
-        WhatsApp: +91 73837 82030<br>
-        Email: hello@mridainteriors.com
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2025 Mrida Interiors. All rights reserved.
-  </div>
-</footer>
-<a class="whatsapp-fab"
-   href="https://wa.me/917383782030?text=Hi%20Mrida%20Interiors%2C%20I%27d%20like%20to%20discuss%20an%20interior%20project."
-   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  💬
-</a>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
 <div class="lightbox">
-  <span class="close-btn">×</span>
-  <span class="arrow left">‹</span>
-  <img src="" alt="Project image">
-  <span class="arrow right">›</span>
+    <span class="close-btn">×</span>
+    <span class="arrow left">‹</span>
+    <img src="" alt="Project image">
+    <span class="arrow right">›</span>
 </div>
+
+<!-- Load Footer JS first -->
+<script src="../footer.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>
