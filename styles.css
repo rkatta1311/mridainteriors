@@ -25,24 +25,32 @@ img{max-width:100%;display:block;}
 a{color:inherit;}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem;}
 
+/* === HEADER STYLES === */
 .site-header{
   position:fixed;
   top:0;
   left:0;
   right:0;
   z-index:1000;
-  background:transparent;
+  /* DEFAULT: White Background (For all non-home pages) */
+  background: #FFFFFF;
   backdrop-filter:none;
   border-bottom:none;
   padding:12px 0;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 }
-.site-header:not(.scrolled){
-  background:transparent !important;
+
+/* HOME SCREEN: Transparent Initially */
+.site-header.home-header {
+  background: transparent;
+  box-shadow: none;
 }
+
+/* SCROLLED STATE: Black Background (Applies to all pages) */
 .site-header.scrolled{
-  background:rgba(5,5,7,0.90) !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  background: #050507 !important; /* Black */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .nav-bar{
@@ -77,23 +85,47 @@ a{color:inherit;}
   display: block;
   width: 25px;
   height: 2px;
-  background: #fff; /* Default white */
+  /* DEFAULT: Dark lines (on white bg) */
+  background: #1A1A1A;
   margin: 5px 0;
   transition: 0.3s;
   border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: none;
+}
+
+/* HOME SCREEN: White lines initially */
+.site-header.home-header .hamburger span {
+  background: #FFFFFF;
+}
+
+/* SCROLLED: White lines (on black bg) */
+.site-header.scrolled .hamburger span {
+  background: #FFFFFF;
 }
 
 /* Desktop Nav */
 .main-nav{display:flex;gap:1.4rem;font-weight:500;font-size:.9rem;}
 .main-nav a{
-  color:rgba(255,255,255,0.95);
+  /* DEFAULT: Dark text (on white bg) */
+  color: #1A1A1A;
   margin-left:28px;
   font-weight:500;
   text-decoration:none;
   transition:0.3s;
   position: relative;
+  text-shadow: none;
+}
+
+/* HOME SCREEN: White text initially */
+.site-header.home-header .main-nav a {
+  color: rgba(255,255,255,0.95);
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* SCROLLED: White text (on black bg) */
+.site-header.scrolled .main-nav a {
+  color: rgba(255,255,255,0.95);
+  text-shadow: none;
 }
 
 .main-nav a:hover{
@@ -220,12 +252,15 @@ main{
 }
 .section{
   padding:4rem 0;
-  padding-top: 100px;
+  /* UPDATED: Increased top padding to create margin below fixed header on white pages */
+  padding-top: 130px;
 }
 .section:first-child {
   padding-top: 0;
 }
+/* Exception for sections that follow the hero or are explicitly dark/transparent */
 .section.dark{background:transparent !important;}
+
 .section h2{
   font-family:"Playfair Display",serif;
   font-size:2rem;
