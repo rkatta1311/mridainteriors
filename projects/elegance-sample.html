@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Elegance Sample – Mrida Interiors</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Fix for dark menu items on light background */
+    /* Only apply dark color when header is NOT scrolled */
+    .site-header:not(.scrolled) .main-nav a {
+      color: #1A1A1A;
+      text-shadow: none;
+    }
+    .site-header .main-nav a:hover {
+      color: #d9a967;
+    }
+
+    /* Fix video height to fit screen */
+    .project-media video {
+      max-height: 80vh; /* Limit height to 80% of the screen height */
+      object-fit: cover; /* Crop the video slightly to fill the width/height without stretching */
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -12,21 +30,32 @@
     <a href="../index.html" class="brand">
       <img src="../assets/logo-mrida-gold.png" alt="Mrida Interiors logo">
     </a>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="main-nav">
       <a href="../index.html">Home</a>
       <a href="../services.html">Services</a>
       <a href="../portfolio.html">Portfolio</a>
-      <a href="../contact.html" class="nav-cta">Contact</a>
+      <a href="../contact.html">Contact</a>
     </nav>
   </div>
 </header>
 <main>
   <section class="project-intro">
     <div class="project-media">
-      <video controls poster="../assets/project4.jpg">
-        <source src="../assets/hero1.jpg" type="video/mp4">
+      <!-- Updated video poster to match jpg format -->
+      <video autoplay muted loop playsinline poster="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0001.jpg">
+        <source src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20HOUSE%20VIDEO.mp4" type="video/mp4">
+        Your browser does not support the video tag.
       </video>
-      <img src="../assets/project5.jpg" alt="Elegance Sample detail" class="project-overlap">
+      <!-- Updated overlap image to match jpg format -->
+      <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0002.jpg" alt="Elegance Sample detail" class="project-overlap">
     </div>
     <div class="project-summary">
       <h1>Elegance Sample</h1>
@@ -35,8 +64,8 @@
       </p>
       <div class="project-meta">
         <div><span>Location</span><strong>Sanand</strong></div>
-        <div><span>Type</span><strong>Club / Residential</strong></div>
-        <div><span>Area</span><strong>Approx. 2,500 sq.ft.</strong></div>
+        <div><span>Type</span><strong>Residential (2BHK)</strong></div>
+        <div><span>Area</span><strong>Approx. 1,500 sq.ft.</strong></div>
       </div>
       <p class="small">
         Mrida Interiors managed planning, material selection, custom furniture and styling for this project,
@@ -49,55 +78,82 @@
   <section class="section">
     <div class="container">
       <h2>Gallery</h2>
-    </div>
-    <div class="gallery">
-      <img src="../assets/project4.jpg" data-lightbox data-src="../assets/project4.jpg" alt="Elegance Sample view 1">
-      <img src="../assets/project5.jpg" data-lightbox data-src="../assets/project5.jpg" alt="Elegance Sample view 2">
-      <img src="../assets/project6.jpg" data-lightbox data-src="../assets/project6.jpg" alt="Elegance Sample view 3">
-      <img src="../assets/project1.jpg" data-lightbox data-src="../assets/project1.jpg" alt="Elegance Sample view 4">
-      
+
+      <!-- NEW SLIDER STRUCTURE -->
+      <div class="gallery-slider-container">
+        <button class="slider-arrow prev" aria-label="Previous slide">‹</button>
+
+        <div class="gallery-slider-track">
+          <!-- Slide 1 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0001.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0001.jpg" alt="Elegance Sample view 1">
+          </div>
+          <!-- Slide 2 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0002.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0002.jpg" alt="Elegance Sample view 2">
+          </div>
+          <!-- Slide 3 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0003.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0003.jpg" alt="Elegance Sample view 3">
+          </div>
+          <!-- Slide 4 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0004.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0004.jpg" alt="Elegance Sample view 4">
+          </div>
+          <!-- Slide 5 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0005.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0005.jpg" alt="Elegance Sample view 5">
+          </div>
+          <!-- Slide 6 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0006.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0006.jpg" alt="Elegance Sample view 6">
+          </div>
+          <!-- Slide 7 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0007.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0007.jpg" alt="Elegance Sample view 7">
+          </div>
+          <!-- Slide 8 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0008.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0008.jpg" alt="Elegance Sample view 8">
+          </div>
+          <!-- Slide 9 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0009.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0009.jpg" alt="Elegance Sample view 9">
+          </div>
+          <!-- Slide 10 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0010.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0010.jpg" alt="Elegance Sample view 10">
+          </div>
+          <!-- Slide 11 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0011.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0011.jpg" alt="Elegance Sample view 11">
+          </div>
+          <!-- Slide 12 -->
+          <div class="gallery-slide">
+            <img src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0012.jpg" data-lightbox data-src="../assets/elegance-sample/RADHE%20ELEGANCE%20SAMPLE%20PHOTOS_page-0012.jpg" alt="Elegance Sample view 12">
+          </div>
+        </div>
+
+        <button class="slider-arrow next" aria-label="Next slide">›</button>
+      </div>
+      <!-- END SLIDER STRUCTURE -->
+
     </div>
   </section>
 </main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <img src="../assets/logo-mrida-gold.png" alt="Mrida Interiors" class="footer-logo">
-      <p class="small">
-        Boutique interior design studio crafting warm, modern spaces across Sanand.
-      </p>
-    </div>
-    <div>
-      <h4>Studio</h4>
-      <a href="../index.html">Home</a>
-      <a href="../services.html">Services</a>
-      <a href="../portfolio.html">Portfolio</a>
-      <a href="../contact.html">Contact</a>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <p class="small">
-        Sanand, Gujarat<br>
-        WhatsApp: +91 73837 82030<br>
-        Email: hello@mridainteriors.com
-      </p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2025 Mrida Interiors. All rights reserved.
-  </div>
-</footer>
-<a class="whatsapp-fab"
-   href="https://wa.me/917383782030?text=Hi%20Mrida%20Interiors%2C%20I%27d%20like%20to%20discuss%20an%20interior%20project."
-   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  💬
-</a>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
 <div class="lightbox">
   <span class="close-btn">×</span>
   <span class="arrow left">‹</span>
   <img src="" alt="Project image">
   <span class="arrow right">›</span>
 </div>
+
+<!-- Load Footer JS first -->
+<script src="../footer.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>
