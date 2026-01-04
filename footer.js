@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <div>
         <img src="${pathPrefix}assets/logo-mrida-gold.png" alt="Mrida Interiors" class="footer-logo">
         <p class="small">
-          Boutique interior design studio crafting warm, modern spaces across Sanand.
+          Boutique interior design studio crafting warm, modern spaces across Ahmedabad.
         </p>
       </div>
       <div>
