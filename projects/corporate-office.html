@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Corporate Office – Mrida Interiors</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Fix for dark menu items on light background */
+        /* Only apply dark color when header is NOT scrolled */
+        .site-header:not(.scrolled) .main-nav a {
+          color: #1A1A1A;
+          text-shadow: none;
+        }
+        .site-header .main-nav a:hover {
+          color: #d9a967;
+        }
+
+        /* Fix video height to fit screen */
+        .project-media video {
+          max-height: 80vh; /* Limit height to 80% of the screen height */
+          object-fit: cover; /* Crop the video slightly to fill the width/height without stretching */
+          width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-bar">
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo-mrida-gold.png" alt="Mrida Interiors logo">
+        </a>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="../services.html">Services</a>
+            <a href="../portfolio.html">Portfolio</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="project-intro">
+        <div class="project-media">
+            <!-- UPDATE VIDEO PATH HERE -->
+            <video autoplay muted loop playsinline poster="../assets/corporate-office/IMG_2371.JPG">
+                <source src="../assets/corporate-office/IMG_2069.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <!-- UPDATE OVERLAP IMAGE PATH HERE -->
+            <img src="../assets/corporate-office/IMG_2373.JPG" alt="Corporate Office detail" class="project-overlap">
+        </div>
+        <div class="project-summary">
+            <h1>Corporate Office</h1>
+            <p class="tagline">
+                A modern, functional workspace designed to enhance productivity and reflect corporate identity.
+            </p>
+            <div class="project-meta">
+                <div><span>Location</span><strong>Sanand</strong></div>
+                <div><span>Type</span><strong>Commercial</strong></div>
+                <div><span>Area</span><strong>Approx. 2000 sq.ft.</strong></div>
+            </div>
+            <p class="small">
+                Mrida Interiors delivered a turnkey office solution, focusing on ergonomic layouts, acoustic comfort,
+                and a professional aesthetic that aligns with the client's brand values.
+            </p>
+            <a href="../contact.html" class="btn-primary" style="margin-top:1rem;display:inline-flex;">Discuss a Similar
+                Project</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+
+            <!-- NEW SLIDER STRUCTURE -->
+            <div class="gallery-slider-container">
+                <button class="slider-arrow prev" aria-label="Previous slide">‹</button>
+
+                <div class="gallery-slider-track">
+                    <!-- Slide 1 -->
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2368.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2368.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2369.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2369.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2370.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2370.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2371.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2371.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2372.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2372.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2373.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2373.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2374.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2374.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2375.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2375.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2376.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2376.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2377.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2377.JPG" alt="Corporate Office view 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <!-- UPDATE IMAGE PATHS HERE -->
+                        <img src="../assets/corporate-office/IMG_2378.JPG" data-lightbox
+                             data-src="../assets/corporate-office/IMG_2378.JPG" alt="Corporate Office view 1">
+                    </div>
+
+                    <!-- Add more slides as needed -->
+                </div>
+
+                <button class="slider-arrow next" aria-label="Next slide">›</button>
+            </div>
+            <!-- END SLIDER STRUCTURE -->
+
+        </div>
+    </section>
+</main>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+<div class="lightbox">
+    <span class="close-btn">×</span>
+    <span class="arrow left">‹</span>
+    <img src="" alt="Project image">
+    <span class="arrow right">›</span>
+</div>
+
+<!-- Load Footer JS first -->
+<script src="../footer.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>
