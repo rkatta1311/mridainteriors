@@ -14,13 +14,24 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;}
-body{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  background: var(--bg);
-  color:#1A1A1A;
-  -webkit-font-smoothing:antialiased;
+
+/* === FIX: STRICTLY PREVENT HORIZONTAL SCROLL === */
+html {
+  width: 100%;
+  overflow-x: hidden;
 }
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: #1A1A1A;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+}
+
 img{max-width:100%;display:block;}
 a{color:inherit;}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem;}
@@ -30,7 +41,7 @@ a{color:inherit;}
   position:fixed;
   top:0;
   left:0;
-  right:0;
+  width: 100%; /* Use 100% instead of 100vw to fit exact viewport */
   z-index:1000;
   /* DEFAULT: White Background (For all non-home pages) */
   background: #FFFFFF;
@@ -60,6 +71,7 @@ a{color:inherit;}
   max-width:1200px;
   margin:auto;
   padding:0 24px;
+  width: 100%;
 }
 
 .brand img {
@@ -96,11 +108,13 @@ a{color:inherit;}
 /* HOME SCREEN: White lines initially */
 .site-header.home-header .hamburger span {
   background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Added shadow for visibility */
 }
 
 /* SCROLLED: White lines (on black bg) */
 .site-header.scrolled .hamburger span {
   background: #FFFFFF;
+  box-shadow: none;
 }
 
 /* Desktop Nav */
@@ -158,7 +172,8 @@ a{color:inherit;}
   background:#050507;
   padding-top:0 !important;
   margin-top:0 !important;
-  overflow:hidden;
+  overflow:hidden; /* CRITICAL: Clips the slider content */
+  width: 100%; /* Use 100% not 100vw */
 }
 
 .hero-slides{
@@ -249,6 +264,8 @@ a{color:inherit;}
 /* Sections */
 main{
   padding-top: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 .section{
   padding:4rem 0;
@@ -548,11 +565,6 @@ main{
   color: #9ca3af;
 }
 
-/* Specific override for small text in footer */
-.site-footer .small {
-  color: var(--muted);
-}
-
 /* WhatsApp FAB */
 .whatsapp-fab{
   position:fixed;
@@ -658,6 +670,13 @@ main{
   .hero-content{padding-top:6rem;}
   .hero h1{font-size:2.2rem;}
 
+  /* Constrain logo width on mobile to prevent horizontal scroll */
+  .brand img {
+    max-width: 180px;
+    height: auto;
+    max-height: 64px;
+  }
+
   /* Project Intro Responsive */
   .project-intro{grid-template-columns:1fr;margin-top:5.2rem;}
   .project-overlap{position:relative;right:auto;bottom:auto;width:60%;margin:-52px 0 0 auto;}
@@ -697,12 +716,14 @@ main{
     justify-content: center;
     align-items: center;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s;
     z-index: 1000;
+    visibility: hidden; /* FIX: Hide when closed to prevent horizontal scroll */
   }
 
   .main-nav.active {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .main-nav a {

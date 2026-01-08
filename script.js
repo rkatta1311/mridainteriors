@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // === NEW: Mobile Menu Toggle ===
+  const hamburger = document.querySelector('.hamburger');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (hamburger && mainNav) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mainNav.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link inside it
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('active');
+      });
+    });
+  }
+
   // header background on scroll
   const header = document.querySelector('.site-header');
   const onScroll = () => {
@@ -113,12 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update button states
       prevBtn.disabled = currentIndex === 0;
-      // UPDATED: Allow scrolling until the very last item is the first one on the left
       nextBtn.disabled = currentIndex >= slides.length - 1;
     };
 
     nextBtn.addEventListener('click', () => {
-      // UPDATED: Condition matches the disabled logic above
       if (currentIndex < slides.length - 1) {
         currentIndex++;
         updateSlidePosition();
